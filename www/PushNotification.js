@@ -36,6 +36,20 @@ PushNotification.prototype.unregister = function(successCallback, errorCallback,
      cordova.exec(successCallback, errorCallback, "PushPlugin", "unregister", [options]);
 };
 
+// Updates foreground tag
+PushNotification.prototype.onpause = function(successCallback, errorCallback) {
+    if (errorCallback == null) { errorCallback = function() {}}
+
+     cordova.exec(successCallback, errorCallback, "PushPlugin", "onpause", []);
+};
+
+// Updates foreground tag
+PushNotification.prototype.onresume = function(successCallback, errorCallback) {
+    if (errorCallback == null) { errorCallback = function() {}}
+
+     cordova.exec(successCallback, errorCallback, "PushPlugin", "onresume", []);
+};
+
     // Call this if you want to show toast notification on WP8
     PushNotification.prototype.showToastNotification = function (successCallback, errorCallback, options) {
         if (errorCallback == null) { errorCallback = function () { } }

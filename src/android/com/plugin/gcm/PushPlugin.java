@@ -24,6 +24,8 @@ public class PushPlugin extends CordovaPlugin {
 
 	public static final String REGISTER = "register";
 	public static final String UNREGISTER = "unregister";
+        public static final String ONRESUME = "onresume";
+        public static final String ONPAUSE = "onpause";
 	public static final String EXIT = "exit";
 
 	private static CordovaWebView gWebView;
@@ -84,7 +86,17 @@ public class PushPlugin extends CordovaPlugin {
 			Log.v(TAG, "UNREGISTER");
 			result = true;
 			callbackContext.success();
-		} else {
+		}else if (ONRESUME.equals(action)) {
+			gForeground=true;
+			Log.v(TAG, "ONRESUME");
+			result = true;
+			callbackContext.success();
+		}else if (ONPAUSE.equals(action)) {
+			gForeground=false;
+			Log.v(TAG, "ONPAUSE");
+			result = true;
+			callbackContext.success();
+		} else if (){
 			result = false;
 			Log.e(TAG, "Invalid action : " + action);
 			callbackContext.error("Invalid action : " + action);
