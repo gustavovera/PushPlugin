@@ -96,7 +96,7 @@ public class PushPlugin extends CordovaPlugin {
 			Log.v(TAG, "ONPAUSE");
 			result = true;
 			callbackContext.success();
-		} else if (){
+		} else {
 			result = false;
 			Log.e(TAG, "Invalid action : " + action);
 			callbackContext.error("Invalid action : " + action);
